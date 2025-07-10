@@ -6,11 +6,16 @@ from datetime import datetime
 with open("allcardscurrent.json","r",encoding="utf-8") as f:
     cards = json.load(f)
 
+NON_PLAYABLE_TYPES = {
+    "Plane", "Scheme", "Vanguard", "Conspiracy",
+    "Token", "Emblem", "Attraction", "Dungeon", "Sticker"
+}
+
 first_printings = {}
 
 for card in cards:
     oracle_id = card.get("oracle_id")
-    release_date = card.get("released_at")
+    released_at = card.get("released_at")
 
     if not oracle_id or not released_at:
         continue
@@ -19,15 +24,15 @@ for card in cards:
 
     
 def parse_types(line):
-    if "-" in line:
-        type_segment, sub_segment = line.split("-",1)
+    if "—" in line:  # Em dash
+        type_segment, sub_segment = line.split("—", 1)
         types = [t.strip() for t in type_segment.strip().split()]
         subtypes = [s.strip() for s in sub_segment.strip().split()]
-        else:
-            types = [t.strip() for t in type_segment.strip().split()]
-            subtypes = []
+    else:
+        types = [t.strip() for t in line.strip().split()]
+        subtypes = []
+    return types, subtypes
 
-        return types, subtypes
 
 with open("first_printings_trimmed.csv", "w", newline='', encoding="utf-8") as out_csv:
     writer = csv.writer(out_csv)
@@ -46,3 +51,5 @@ with open("first_printings_trimmed.csv", "w", newline='', encoding="utf-8") as o
         rarity = card.get("rarity", "")
         
         writer.writerow([name, mana_value, color_identity, type_str, subtype_str, set_code, year, rarity])
+
+print("end of run")
