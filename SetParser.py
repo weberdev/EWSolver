@@ -8,8 +8,22 @@ with open("allcardscurrent.json","r",encoding="utf-8") as f:
 
 NON_PLAYABLE_TYPES = {
     "Plane", "Scheme", "Vanguard", "Conspiracy", "Card", "Eturecray",
-    "Token", "Emblem", "Attraction", "Dungeon", "Sticker"
+    "Token", "Emblem", "Attraction", "Dungeon", "Sticker", "Summon"
 }
+
+UNACCEPTABLE_JOKE_SETS = {
+    "UNK", "UNF", "TUNF", "SUNF", "UND", "TUND", "UST", "PUST", "TUST",
+    "UNH", "PUNH", "UGL", "TUGL"
+}
+
+RARITY_MAP = {
+    "common": 1,
+    "uncommon": 2,
+    "rare": 3,
+    "mythic": 4
+}
+
+
 
 first_printings = {}
 
@@ -49,9 +63,12 @@ with open("first_printings_trimmed_scraped_types.csv", "w", newline='', encoding
         type_str = ",".join(types)
         subtype_str = ",".join(subtypes)
         set_code = card.get("set", "")
+        if set_code.upper() in UNACCEPTABLE_JOKE_SETS:
+            continue
         year = card.get("released_at", "0000")[:4]
-        rarity = card.get("rarity", "")
-        
+        rarity_str = card.get("rarity", "").lower()
+        rarity = RARITY_MAP.get(rarity_str, 0)
+
         writer.writerow([name, mana_value, color_identity, type_str, subtype_str, set_code, year, rarity])
 
 print("end of run")
