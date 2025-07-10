@@ -34,7 +34,7 @@ def parse_types(line):
     return types, subtypes
 
 
-with open("first_printings_trimmed.csv", "w", newline='', encoding="utf-8") as out_csv:
+with open("first_printings_trimmed_scraped_types.csv", "w", newline='', encoding="utf-8") as out_csv:
     writer = csv.writer(out_csv)
     writer.writerow(["name", "mana_value", "color_identity", "types", "subtypes", "set", "year", "rarity"])
     
@@ -44,6 +44,8 @@ with open("first_printings_trimmed.csv", "w", newline='', encoding="utf-8") as o
         color_identity = ",".join(card.get("color_identity", []))
         type_line = card.get("type_line", "")
         types, subtypes = parse_types(type_line)
+        if any(t in NON_PLAYABLE_TYPES for t in types):
+            continue
         type_str = ",".join(types)
         subtype_str = ",".join(subtypes)
         set_code = card.get("set", "")
