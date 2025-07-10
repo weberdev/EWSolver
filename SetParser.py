@@ -7,7 +7,7 @@ with open("allcardscurrent.json","r",encoding="utf-8") as f:
     cards = json.load(f)
 
 NON_PLAYABLE_TYPES = {
-    "Plane", "Scheme", "Vanguard", "Conspiracy", "Card"
+    "Plane", "Scheme", "Vanguard", "Conspiracy", "Card", "Eturecray",
     "Token", "Emblem", "Attraction", "Dungeon", "Sticker"
 }
 
