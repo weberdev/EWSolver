@@ -28,3 +28,21 @@ def parse_types(line):
             subtypes = []
 
         return types, subtypes
+
+with open("first_printings_trimmed.csv", "w", newline='', encoding="utf-8") as out_csv:
+    writer = csv.writer(out_csv)
+    writer.writerow(["name", "mana_value", "color_identity", "types", "subtypes", "set", "year", "rarity"])
+    
+    for card in first_printings.values():
+        name = card.get("name", "")
+        mana_value = card.get("cmc", 0)
+        color_identity = ",".join(card.get("color_identity", []))
+        type_line = card.get("type_line", "")
+        types, subtypes = parse_types(type_line)
+        type_str = ",".join(types)
+        subtype_str = ",".join(subtypes)
+        set_code = card.get("set", "")
+        year = card.get("released_at", "0000")[:4]
+        rarity = card.get("rarity", "")
+        
+        writer.writerow([name, mana_value, color_identity, type_str, subtype_str, set_code, year, rarity])
