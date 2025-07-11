@@ -1,6 +1,7 @@
 import csv
 import statistics
 
+
 # File to analyze
 FILENAME = "first_printings_trimmed_scraped_types.csv"
 
