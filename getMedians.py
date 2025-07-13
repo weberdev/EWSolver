@@ -1,16 +1,16 @@
 import csv
 import statistics
 
+# === Configuration ===
+INPUT_FILE = "first_printings_trimmed_scraped_types.csv"
 
-# File to analyze
-FILENAME = "first_printings_trimmed_scraped_types.csv"
-
-# Lists to hold numeric values
+# === Data Containers ===
 mana_values = []
-years = []
+release_years = []
 rarities = []
 
-with open(FILENAME, newline='', encoding='utf-8') as csvfile:
+# === Load and Parse CSV ===
+with open(INPUT_FILE, newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
 
     for row in reader:
@@ -19,17 +19,19 @@ with open(FILENAME, newline='', encoding='utf-8') as csvfile:
             year = int(row["year"])
             rarity = int(row["rarity"])
         except ValueError:
-            continue  # Skip rows with missing or malformed numbers
+            continue  # Skip any rows with malformed data
 
         mana_values.append(mana)
-        years.append(year)
+        release_years.append(year)
         rarities.append(rarity)
 
-# Compute medians
+# === Compute Medians ===
 median_mana = statistics.median(mana_values)
-median_year = statistics.median(years)
+median_year = statistics.median(release_years)
 median_rarity = statistics.median(rarities)
 
-print(f"Median mana value: {median_mana}")
-print(f"Median release year: {median_year}")
-print(f"Median rarity: {median_rarity} (1=common, 2=uncommon, 3=rare, 4=mythic)")
+# === Output Summary ===
+print(f"Total cards processed: {len(mana_values)}")
+print(f"Median Mana Value:     {median_mana}")
+print(f"Median Release Year:   {median_year}")
+print(f"Median Rarity:         {median_rarity} (1=Common, 2=Uncommon, 3=Rare, 4=Mythic)")
