@@ -5,3 +5,8 @@
 #Equal
 #Near below
 #Far below
+#year and set are different
+#year above
+#same year, different set
+#correct set
+#year below⌈
