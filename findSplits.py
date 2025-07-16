@@ -17,7 +17,18 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
                      'CN2': 108, 'KLD': 109, 'MPS': 110, 'C16': 111, 'AER': 112, 'AKH': 113, 'MP2': 114, 'HOU': 115,
                      'C17': 116, 'XLN': 117, 'RIX': 118, 'DOM': 119, 'BBD': 120, 'GS1': 121, 'M19': 122, 'C18': 123,
                      'GRN': 124, 'MED': 125, 'G18': 126, 'GNT': 127, 'RNA': 128, 'WAR': 129, 'MH1': 130, 'M20': 131,
-                     'C19': 132, 'ELD': 133, 'GN2': 134, 'SLD': 135, 'THB': 136, 'C20': 137, 'IKO': 138, 'M21': 139, 'JMP': 140, 'ZNR': 141, 'ZNC': 142, 'MZNR': 143, 'PLST': 144, 'CMR': 145, 'KHM': 146, 'KHC': 147, 'MKHM': 148, 'STA': 149, 'STX': 150, 'C21': 151, 'MSTX': 152, 'MH2': 153, 'MMH2': 154, 'AFR': 155, 'AFC': 156, 'MAFR': 157, 'MID': 158, 'MIC': 159, 'MMID': 160, 'VOW': 161, 'VOC': 162, 'MVOW': 163, 'CC2': 164, 'NEC': 165, 'NEO': 166, 'MNEO': 167, 'Q07': 168, 'SNC': 169, 'NCC': 170, 'MSNC': 171, 'CLB': 172, 'MCLB': 173, '2X2': 174, 'DMU': 175, 'DMC': 176, 'MDMU': 177, '40K': 178, 'GN3': 179, 'BRO': 180, 'BOT': 181, 'BRC': 182, 'MBRO': 183, 'J22': 184, 'ONE': 185, 'ONC': 186, 'MOM': 187, 'MOC': 188, 'MAT': 189, 'LTR': 190, 'LTC': 191, 'CMM': 192, 'WOE': 193, 'WOC': 194, 'WHO': 195, 'LCI': 196, 'LCC': 197, 'REX': 198, 'MKM': 199, 'MKC': 200, 'CLU': 201, 'PIP': 202, 'OTJ': 203, 'BIG': 204, 'OTC': 205, 'MH3': 206, 'M3C': 207, 'ACR': 208, 'MACR': 209, 'MB2': 210, 'BLB': 211, 'BLC': 212, 'DSK': 213, 'DSC': 214, 'FDN': 215, 'J25': 216, 'DFT': 217, 'DRC': 218, 'TDM': 219, 'TDC': 220, 'FIN': 221, 'FIC': 222, 'SPE': 223}
+                     'C19': 132, 'ELD': 133, 'GN2': 134, 'SLD': 135, 'THB': 136, 'C20': 137, 'IKO': 138, 'M21': 139,
+                     'JMP': 140, 'ZNR': 141, 'ZNC': 142, 'MZNR': 143, 'PLST': 144, 'CMR': 145, 'KHM': 146, 'KHC': 147,
+                     'MKHM': 148, 'STA': 149, 'STX': 150, 'C21': 151, 'MSTX': 152, 'MH2': 153, 'MMH2': 154, 'AFR': 155,
+                     'AFC': 156, 'MAFR': 157, 'MID': 158, 'MIC': 159, 'MMID': 160, 'VOW': 161, 'VOC': 162, 'MVOW': 163,
+                     'CC2': 164, 'NEC': 165, 'NEO': 166, 'MNEO': 167, 'Q07': 168, 'SNC': 169, 'NCC': 170, 'MSNC': 171,
+                     'CLB': 172, 'MCLB': 173, '2X2': 174, 'DMU': 175, 'DMC': 176, 'MDMU': 177, '40K': 178, 'GN3': 179,
+                     'BRO': 180, 'BOT': 181, 'BRC': 182, 'MBRO': 183, 'J22': 184, 'ONE': 185, 'ONC': 186, 'MOM': 187,
+                     'MOC': 188, 'MAT': 189, 'LTR': 190, 'LTC': 191, 'CMM': 192, 'WOE': 193, 'WOC': 194, 'WHO': 195,
+                     'LCI': 196, 'LCC': 197, 'REX': 198, 'MKM': 199, 'MKC': 200, 'CLU': 201, 'PIP': 202, 'OTJ': 203,
+                     'BIG': 204, 'OTC': 205, 'MH3': 206, 'M3C': 207, 'ACR': 208, 'MACR': 209, 'MB2': 210, 'BLB': 211,
+                     'BLC': 212, 'DSK': 213, 'DSC': 214, 'FDN': 215, 'J25': 216, 'DFT': 217, 'DRC': 218, 'TDM': 219,
+                     'TDC': 220, 'FIN': 221, 'FIC': 222, 'SPE': 223}
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
