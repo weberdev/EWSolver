@@ -2,25 +2,7 @@ import csv
 
 # === Load Data ===
 cards = []
-set_release_order = {
-    "lea": 0, "leb": 1, "2ed": 2, "arn": 3, "atq": 4, "3ed": 5, "leg": 6, "drk": 7,
-    "fem": 8, "4ed": 9, "ice": 10, "chr": 11, "hom": 12, "all": 13, "mir": 14,
-    "vis": 15, "wth": 16, "tmp": 17, "sth": 18, "exo": 19, "usg": 20, "ulg": 21,
-    "uds": 22, "mmq": 23, "nem": 24, "pcy": 25, "inv": 26, "pls": 27, "apc": 28,
-    "ody": 29, "tor": 30, "jud": 31, "ons": 32, "lgd": 33, "scg": 34, "mrd": 35,
-    "dst": 36, "5dn": 37, "chk": 38, "bok": 39, "sok": 40, "rav": 41, "gpt": 42,
-    "dis": 43, "csp": 44, "tsp": 45, "plc": 46, "fut": 47, "lrw": 48, "mor": 49,
-    "shm": 50, "eve": 51, "ala": 52, "con": 53, "arb": 54, "m10": 55, "zen": 56,
-    "wwk": 57, "roe": 58, "m11": 59, "som": 60, "mbs": 61, "nph": 62, "m12": 63,
-    "isd": 64, "dka": 65, "avr": 66, "m13": 67, "rtr": 68, "gtc": 69, "dgm": 70,
-    "m14": 71, "ths": 72, "bng": 73, "jou": 74, "m15": 75, "ktk": 76, "frf": 77,
-    "dtk": 78, "ori": 79, "bfz": 80, "ogw": 81, "soi": 82, "emn": 83, "kld": 84,
-    "aer": 85, "akh": 86, "hou": 87, "xln": 88, "rix": 89, "dom": 90, "grn": 91,
-    "rna": 92, "war": 93, "m20": 94, "eld": 95, "thb": 96, "iko": 97, "znr": 98,
-    "khm": 99, "stx": 100, "afr": 101, "mid": 102, "vow": 103, "neo": 104,
-    "snc": 105, "dmu": 106, "bro": 107, "one": 108, "mom": 109, "woe": 110,
-    "lci": 111, "otj": 112, "mkm": 113,
-}
+set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6, 'FEM': 7, 'ICE': 8, 'HML': 9, 'ALL': 10, 'MIR': 11, 'MGB': 12, 'VIS': 13, 'POR': 14, 'WTH': 15, 'TMP': 16, 'STH': 17, 'EXO': 18, 'P02': 19, 'USG': 20, 'ULG': 21, 'PTK': 22, 'UDS': 23, 'S99': 24, 'MMQ': 25, 'NEM': 26, 'PCY': 27, 'INV': 28, 'PLS': 29, 'APC': 30, 'ODY': 31, 'TOR': 32, 'JUD': 33, 'ONS': 34, 'LGN': 35, 'SCG': 36, '8ED': 37, 'MRD': 38, 'DST': 39, '5DN': 40, 'CHK': 41, 'BOK': 42, 'SOK': 43, 'RAV': 44, 'GPT': 45, 'DIS': 46, 'CSP': 47, 'TSP': 48, 'TSB': 49, 'PLC': 50, 'FUT': 51, 'LRW': 52, 'MOR': 53, 'SHM': 54, 'EVE': 55, 'DRB': 56, 'ALA': 57, 'CON': 58, 'ARB': 59, 'M10': 60, 'HOP': 61, 'ZEN': 62, 'WWK': 63, 'ROE': 64, 'ARC': 65, 'M11': 66, 'V10': 67, 'DDF': 68, 'SOM': 69, 'MBS': 70, 'NPH': 71, 'CMD': 72, 'M12': 73, 'V11': 74, 'ISD': 75, 'DKA': 76, 'AVR': 77, 'PC2': 78, 'M13': 79, 'DDJ': 80, 'RTR': 81, 'GTC': 82, 'DGM': 83, 'M14': 84, 'DDL': 85, 'THS': 86, 'C13': 87, 'BNG': 88, 'JOU': 89, 'CNS': 90, 'M15': 91, 'DDN': 92, 'KTK': 93, 'C14': 94, 'FRF': 95, 'DTK': 96, 'ORI': 97, 'CP3': 98, 'DDP': 99, 'BFZ': 100, 'EXP': 101, 'C15': 102, 'OGW': 103, 'DDQ': 104, 'SOI': 105, 'EMA': 106, 'EMN': 107, 'CN2': 108, 'KLD': 109, 'MPS': 110, 'C16': 111, 'AER': 112, 'AKH': 113, 'MP2': 114, 'HOU': 115, 'C17': 116, 'XLN': 117, 'RIX': 118, 'DOM': 119, 'BBD': 120, 'GS1': 121, 'M19': 122, 'C18': 123, 'GRN': 124, 'MED': 125, 'G18': 126, 'GNT': 127, 'RNA': 128, 'WAR': 129, 'MH1': 130, 'M20': 131, 'C19': 132, 'ELD': 133, 'GN2': 134, 'SLD': 135, 'THB': 136, 'C20': 137, 'IKO': 138, 'M21': 139, 'JMP': 140, 'ZNR': 141, 'ZNC': 142, 'MZNR': 143, 'PLST': 144, 'CMR': 145, 'KHM': 146, 'KHC': 147, 'MKHM': 148, 'STA': 149, 'STX': 150, 'C21': 151, 'MSTX': 152, 'MH2': 153, 'MMH2': 154, 'AFR': 155, 'AFC': 156, 'MAFR': 157, 'MID': 158, 'MIC': 159, 'MMID': 160, 'VOW': 161, 'VOC': 162, 'MVOW': 163, 'CC2': 164, 'NEC': 165, 'NEO': 166, 'MNEO': 167, 'Q07': 168, 'SNC': 169, 'NCC': 170, 'MSNC': 171, 'CLB': 172, 'MCLB': 173, '2X2': 174, 'DMU': 175, 'DMC': 176, 'MDMU': 177, '40K': 178, 'GN3': 179, 'BRO': 180, 'BOT': 181, 'BRC': 182, 'MBRO': 183, 'J22': 184, 'ONE': 185, 'ONC': 186, 'MOM': 187, 'MOC': 188, 'MAT': 189, 'LTR': 190, 'LTC': 191, 'CMM': 192, 'WOE': 193, 'WOC': 194, 'WHO': 195, 'LCI': 196, 'LCC': 197, 'REX': 198, 'MKM': 199, 'MKC': 200, 'CLU': 201, 'PIP': 202, 'OTJ': 203, 'BIG': 204, 'OTC': 205, 'MH3': 206, 'M3C': 207, 'ACR': 208, 'MACR': 209, 'MB2': 210, 'BLB': 211, 'BLC': 212, 'DSK': 213, 'DSC': 214, 'FDN': 215, 'J25': 216, 'DFT': 217, 'DRC': 218, 'TDM': 219, 'TDC': 220, 'FIN': 221, 'FIC': 222, 'SPE': 223}
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
