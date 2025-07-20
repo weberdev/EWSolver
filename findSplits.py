@@ -30,6 +30,9 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
                      'BLC': 212, 'DSK': 213, 'DSC': 214, 'FDN': 215, 'J25': 216, 'DFT': 217, 'DRC': 218, 'TDM': 219,
                      'TDC': 220, 'FIN': 221, 'FIC': 222, 'SPE': 223}
 
+# todo: sort sets by release date within year
+# do I?
+
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
