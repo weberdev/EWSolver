@@ -32,6 +32,9 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 
 # todo: sort sets by release date within year
 # do I?
+# structuring plan: sets are grouped by year, and sorted within year by release date
+# Cards are sorted by color within sets, and within color groupings sorted by mana value
+# this allows splits on color, on year, and on mv, with compute time on type being more challenging
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
