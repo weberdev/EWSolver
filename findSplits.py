@@ -39,6 +39,10 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # it's wednesday today. need to check for a Python version of LINQ.
 # it is actually wednesday, my dudes
 # athursdaday come and gone
+# Useful notes:
+# 25% point: 2021, VOW
+# midpoint for unique cards in history: 2015, BFZ
+# 75% point: 2005, SOK
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
