@@ -40,7 +40,7 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # it is actually wednesday, my dudes
 # athursdaday come and gone
 # Useful notes:
-# at time of writing, there are 30255 unique magic cards in the domain of cards in Enchant Worldle.
+# at time of writing (July 25/25, EOE full spoiler revealed, SPM begins), there are 30255 unique magic cards in the domain of cards in Enchant Worldle.
 # Here is the scryfall query I use:
 # https://scryfall.com/search?as=grid&order=released&q=%28game%3Apaper%29+is%3Afirstprint&unique=cards
 
