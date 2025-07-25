@@ -38,6 +38,7 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # I'll implement this thursday.
 # it's wednesday today. need to check for a Python version of LINQ.
 # it is actually wednesday, my dudes
+# athursdaday come and gone
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
