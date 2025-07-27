@@ -49,6 +49,10 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # 75% point: 2005, SOK
 
 #todo: make an array year on year
+#next: put sets into it year over year
+# this can be done with the first card from the dataset for each set being put into the year bucket
+# each card follows in line
+# each year index of the outer array holds an array of set objects
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
