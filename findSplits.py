@@ -54,6 +54,9 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # each card follows in line
 # each year index of the outer array holds an array of set objects
 # each set object holds an array of colorlist objects
+# each colorlist object contains all the cards from a set of a specific color/combination thereof
+# colorlists are organized by Mana Value
+
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
