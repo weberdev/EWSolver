@@ -58,12 +58,16 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # colorlists are organized by Mana Value
 # 
 
-year_buckets = {year: [] for year in range(1993, 2025 + 1)}
+from sets_by_year import sets_by_year
 
-# Example: adding a set to 2024
-year_buckets[2024].append("OTJ")
+year_buckets = {year: [] for year in range(1993, 2026)}
 
-print(year_buckets[2024])  # ['OTJ']
+# Populate buckets:
+for set_code, year in sets_by_year.items():
+    year_buckets[year].append(set_code)
+
+# Example: list sets released in 2015
+print(year_buckets[2015])
 
 
 
