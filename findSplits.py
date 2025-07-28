@@ -56,6 +56,15 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # each set object holds an array of colorlist objects
 # each colorlist object contains all the cards from a set of a specific color/combination thereof
 # colorlists are organized by Mana Value
+# 
+
+year_buckets = {year: [] for year in range(1993, 2025 + 1)}
+
+# Example: adding a set to 2024
+year_buckets[2024].append("OTJ")
+
+print(year_buckets[2024])  # ['OTJ']
+
 
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
