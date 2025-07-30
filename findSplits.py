@@ -66,8 +66,7 @@ year_buckets = {year: [] for year in range(1993, 2026)}
 for set_code, year in sets_by_year.items():
     year_buckets[year].append(set_code)
 
-# Example: list sets released in 2015
-print(year_buckets[2015])
+
 #what next I'm tired
 
 
