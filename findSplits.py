@@ -69,6 +69,9 @@ for set_code, year in sets_by_year.items():
 
 #what next I'm tired
 #todo: load all cards from CSV into buckets
+#sort buckets by sets
+#sort sets by color
+#sort colors by mv
 
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
