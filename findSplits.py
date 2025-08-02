@@ -72,6 +72,7 @@ for set_code, year in sets_by_year.items():
 #sort buckets by sets
 #sort sets by color
 #sort colors by mv
+#split on that or something
 
 
 with open("first_printings_trimmed_scraped_types.csv", newline='', encoding="utf-8") as csvfile:
