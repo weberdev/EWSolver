@@ -35,11 +35,7 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # structuring plan: sets are grouped by year, and sorted within year by release date
 # Cards are sorted by color within sets, and within color groupings sorted by mana value
 # this allows splits on color, on year, and on mv, with compute time on type being more challenging
-# I'll implement this thursday.
-# it's wednesday today. need to check for a Python version of LINQ.
-# it is actually wednesday, my dudes
-# athursdaday come and gone
-# Useful notes:
+
 # at time of writing (July 25/25, EOE full spoiler revealed, SPM begins), there are 30255 unique magic cards in the domain of cards in Enchant Worldle.
 # Here is the scryfall query I use:
 # https://scryfall.com/search?as=grid&order=released&q=%28game%3Apaper%29+is%3Afirstprint&unique=cards
