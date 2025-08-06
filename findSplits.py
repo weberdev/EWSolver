@@ -52,7 +52,6 @@ set_release_order = {'LEA': 1, 'LEB': 2, 'ARN': 3, 'ATQ': 4, 'LEG': 5, 'DRK': 6,
 # each set object holds an array of colorlist objects
 # each colorlist object contains all the cards from a set of a specific color/combination thereof
 # colorlists are organized by Mana Value
-# 
 
 from sets_by_year import sets_by_year
 
